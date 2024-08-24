@@ -1,0 +1,26 @@
+@import "../../app.scss";
+
+.navbar{
+    height: 100px;
+
+    .wrapper{
+        max-width: 90%;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 50%;
+
+        span{
+            font-weight: bold;
+        }
+
+        .links{
+            display: flex;
+            gap: 15px;
+            a{
+                font-size: 20px;
+            }
+        }
+    }
+}
