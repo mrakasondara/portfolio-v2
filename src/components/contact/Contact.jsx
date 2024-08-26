@@ -3,6 +3,7 @@ import { IoIosMail } from "react-icons/io";
 import emailjs from '@emailjs/browser'
 import FormMessage from "./FormMessage";
 import './contact.scss'
+import { AlertError, AlertSuccess } from "../../utils/alert";
 
 const Contact = () =>{
     const ref = useRef()
@@ -14,10 +15,10 @@ const Contact = () =>{
         })
         .then(
             () => {
-            console.log('SUCCESS!');
+            AlertSuccess()
             },
             (error) => {
-            console.log('FAILED...', error.text);
+                AlertError()
             },
         );
     }

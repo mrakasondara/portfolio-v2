@@ -1,7 +1,5 @@
-import { useEffect, useState } from 'react'
 import './hero.scss'
 import { motion } from 'framer-motion'
-import { getFile } from '../../utils/query'
 
 const textAnimate = {
     initial: {
@@ -33,25 +31,6 @@ const sliderAnimate = {
 }
 
 const Hero = () =>{
-    const [file, setFile] = useState('')
-    useEffect(()=>{
-        const getCV = async () =>{
-            const cv = await getFile()
-            setFile(cv)
-        }
-        getCV().catch()
-    },[])
-
-    const downloadCV = () =>{
-        const link = document.createElement('a')
-        link.href = file
-        link.download = 'mrakasondara_cv.png'
-        document.body.appendChild(link)
-        link.click()
-        document.body.removeChild(link)
-        
-    }
-
 
     return(
         <div className="hero">
@@ -60,7 +39,7 @@ const Hero = () =>{
                     <motion.h2 variants={textAnimate}>mrakasondara</motion.h2>
                     <motion.h4 variants={textAnimate}>Front End Developer</motion.h4>
                     <motion.div className="buttons" variants={textAnimate}>
-                        <motion.button variants={textAnimate} onClick={downloadCV}>Download CV</motion.button>
+                        <motion.a variants={textAnimate} href='cv.pdf' download={'cv.pdf'}>Download CV</motion.a>
                         <motion.a variants={textAnimate} href='#Contact'>Contact Me</motion.a>
                     </motion.div>
                 </motion.div>
