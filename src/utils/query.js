@@ -34,4 +34,16 @@ const getImageFromStorage = async (name) => {
   return getUrl;
 };
 
-export { getAllProject };
+const getFile = async () => {
+  const storage = getStorage();
+  const gsRef = ref(
+    storage,
+    `gs://mrakasondara.appspot.com/projects/papucraft.png`
+  );
+  const getUrl = await getDownloadURL(gsRef).then((url) => {
+    return url;
+  });
+  return getUrl;
+};
+
+export { getAllProject, getFile };

@@ -1,7 +1,7 @@
 import { useRef } from 'react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import './parallax.scss'
-const Parallax = () =>{
+const Parallax = ({title}) =>{
 
     const ref = useRef()
 
@@ -18,7 +18,7 @@ const Parallax = () =>{
 
     return (
     <div className="parallax" ref={ref}>
-        <motion.h1 style={{ y: yText,zIndex: zText}}>My Portfolio</motion.h1>
+        <motion.h1 style={{ y: yText,zIndex: zText}}>{title}</motion.h1>
         <motion.div className="stars" style={{y: yBg, x: yBg}}></motion.div>
         <motion.div className="moon" style={{scale: yScale}}></motion.div>
         <div className="mountains"></div>

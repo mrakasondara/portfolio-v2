@@ -1,5 +1,6 @@
 import { useRef} from 'react'
 import { Link } from 'react-router-dom'
+import {FaGithub} from 'react-icons/fa'
 import { motion,useScroll, useTransform } from 'framer-motion'
 import './portfolio.scss'
 
@@ -20,7 +21,10 @@ const Item = ({item}) =>{
                 <motion.div className="textContainer" style={{y: yText}}>
                     <h3>{item.title}</h3> 
                     <p>{item.description}</p>
-                    <Link className='btn' target='_blank' to={item.hosting}>Demo</Link>
+                    <div className="links">
+                        <Link className='btn' target='_blank' to={item.hosting}>Demo</Link>
+                        <Link className='github' target='_blank' to={item.repository}><FaGithub/></Link>
+                    </div>
                 </motion.div>
             </div>
         </section>

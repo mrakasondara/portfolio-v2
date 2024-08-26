@@ -13,6 +13,12 @@
         left: 0;
         bottom: 0;
         width: 240px;
+        @include mobile{
+            width: 100%;
+        }
+        @include tablet{
+            width: 50%;
+        }
         background: white;
         .links{
             position: absolute;
@@ -39,9 +45,15 @@
         background-color: transparent;
         border: none;
         cursor: pointer;
+        @include tablet{
+           top: -4px;
+        }
         span{
             font-size: 15px;
             line-height: 3;
+            @include tablet{
+                font-size: 20px;
+            }
         }
     }
 }
